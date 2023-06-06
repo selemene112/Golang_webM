@@ -12,7 +12,7 @@ import (
 )
 
 var (
-	DB_HOST     = "localhost"
+	DB_HOST     = "db"
 	DB_USER     = "admin"
 	DB_PASSWORD = "lele123"
 	DB_NAME     = "final"
