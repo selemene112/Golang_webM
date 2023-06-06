@@ -1,6 +1,7 @@
 package models
 
 import (
+	"encoding/json"
 	"final/helpers"
 
 	"github.com/asaskevich/govalidator"
@@ -32,5 +33,14 @@ func (u *User) BeforeCreate(tx *gorm.DB)(err error) {
 	}
 	u.Password = helpers.HashPass(u.Password)
 	err = nil
-	return
+	
+
+	userJson := `{}`
+  var user User
+  err = json.Unmarshal([]byte(userJson), &user)
+  if err != nil {
+    panic(err)
+  }
+  return
 }
+
